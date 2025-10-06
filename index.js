@@ -66,7 +66,16 @@ app.post('/login', async (req, res) => {
 });
 
 // Start the server
+// Redirect root URL to the signup page
+app.get('/', (req, res) => {
+    res.redirect('/signup.html');
+});
+
+// Start the server (this line should already be in your file)
 const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Server is running on http://localhost:${PORT}`);
+});
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
 });
