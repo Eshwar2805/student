@@ -4,7 +4,7 @@ const loginForm = document.getElementById('login-form');
 const messageEl = document.getElementById('message');
 
 // Use a placeholder for the backend URL. We will change this when we deploy.
-const BACKEND_URL = 'http://localhost:3000';
+const BACKEND_URL = 'https://mytrail-bz08.onrender.com';
 
 if (signupForm) {
     signupForm.addEventListener('submit', async (e) => {
