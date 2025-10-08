@@ -42,7 +42,7 @@ app.post('/signup', async (req, res) => {
     if (insertError) {
         // This is tricky. The user is created in Auth, but profile failed.
         // For this guide, we'll just log the error. In a real app, you'd handle this.
-        console.error("Error inserting into students table:", insertError.message);
+        console.error("Error inserting into users table:", insertError.message);
         return res.status(500).json({ error: insertError.message });
     }
 
