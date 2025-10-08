@@ -47,7 +47,7 @@ app.post('/signup', async (req, res) => {
         // This is tricky. The user is created in Auth, but profile failed.
         // For this guide, we'll just log the error. In a real app, you'd handle this.
         console.error("Error inserting into users table:", insertError.message);
-        return res.status(500).json({ error: insertError.message });
+        return res.status(500).json({ error:"A user with this email already exists."});
     }
 
     res.status(200).json({ message: 'Signup successful! Please check your email to verify.' });
