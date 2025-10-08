@@ -28,6 +28,10 @@ app.post('/signup', async (req, res) => {
     });
 
     if (authError) {
+        if (authError.message.includes("User already registered")) {
+            // If so, send our custom, user-friendly error message.
+            return res.status(400).json({ error: "A user with this email already exists." });
+        }
         return res.status(400).json({ error: authError.message });
     }
     if (!authData.user) {
