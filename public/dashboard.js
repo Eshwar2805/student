@@ -2,8 +2,8 @@
 const dashboardContainer = document.getElementById('dashboard-container');
 
 // ⚠️ IMPORTANT: Replace these with your actual Supabase project URL and anon key
-const SUPABASE_URL = 'YOUR_SUPABASE_URL'; // e.g., 'https://xyz.supabase.co'
-const SUPABASE_KEY = 'YOUR_SUPABASE_ANON_KEY'; // The long string starting with 'eyJ...'
+const SUPABASE_URL = 'https://tqazcuavwltsrfofubur.supabase.co'; // e.g., 'https://xyz.supabase.co'
+const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRxYXpjdWF2d2x0c3Jmb2Z1YnVyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTk3Njg5MzMsImV4cCI6MjA3NTM0NDkzM30.R_PMg2n3YpRrmOtCECcpHT-jBA8iXHli-AThEz9fNDU'; // The long string starting with 'eyJ...'
 
 const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
