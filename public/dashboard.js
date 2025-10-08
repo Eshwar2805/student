@@ -5,20 +5,20 @@ const dashboardContainer = document.getElementById('dashboard-container');
 const SUPABASE_URL = 'https://tqazcuavwltsrfofubur.supabase.co'; // e.g., 'https://xyz.supabase.co'
 const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRxYXpjdWF2d2x0c3Jmb2Z1YnVyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTk3Njg5MzMsImV4cCI6MjA3NTM0NDkzM30.R_PMg2n3YpRrmOtCECcpHT-jBA8iXHli-AThEz9fNDU'; // The long string starting with 'eyJ...'
 
-const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
 /**
  * Main function to check user session and load the appropriate dashboard.
  */
 async function checkSessionAndLoadDashboard() {
-    const { data: { user }, error: authError } = await supabase.auth.getUser();
+    const { data: { user }, error: authError } = await supabaseClient.auth.getUser();
 
     if (authError || !user) {
         window.location.href = '/login.html';
         return;
     }
 
-    const { data: userProfile, error: profileError } = await supabase
+    const { data: userProfile, error: profileError } = await supabaseClient
         .from('users')
         .select('full_name, role')
         .eq('id', user.id)
@@ -81,7 +81,7 @@ function renderDashboardUI(profile) {
  * Handles the user logout process.
  */
 async function handleLogout() {
-    await supabase.auth.signOut();
+    await supabaseClient.auth.signOut();
     window.location.href = '/login.html';
 }
 
