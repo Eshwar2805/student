@@ -19,7 +19,7 @@ const supabase = createClient(supabaseUrl, supabaseKey);
 
 // 1. SIGNUP Endpoint
 app.post('/signup', async (req, res) => {
-    const { full_name, email, password } = req.body;
+    const { full_name, email, password , role } = req.body;
 
     // Step 1: Sign up the user with Supabase Auth
     const { data: authData, error: authError } = await supabase.auth.signUp({
@@ -36,8 +36,8 @@ app.post('/signup', async (req, res) => {
 
     // Step 2: Insert the full name into the 'students' table
     const { error: insertError } = await supabase
-        .from('students')
-        .insert([{ id: authData.user.id, full_name: full_name, email: email }]);
+        .from('Users')
+        .insert([{ id: authData.user.id, full_name: full_name, email: email ,role: role }]);
 
     if (insertError) {
         // This is tricky. The user is created in Auth, but profile failed.
@@ -73,9 +73,6 @@ app.get('/', (req, res) => {
 
 // Start the server (this line should already be in your file)
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
-});
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
 });

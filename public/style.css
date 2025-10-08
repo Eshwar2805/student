@@ -1,13 +1,100 @@
-/* public/style.css */
-body { font-family: sans-serif; background-color: #f0f2f5; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
-.container { background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); width: 100%; max-width: 400px; }
-form { display: flex; flex-direction: column; gap: 1rem; }
-h2 { text-align: center; color: #333; margin-top: 0; }
-input { padding: 0.8rem; border: 1px solid #ddd; border-radius: 4px; font-size: 1rem; }
-button { padding: 0.8rem; background-color: #007bff; color: white; border: none; border-radius: 4px; font-size: 1rem; cursor: pointer; }
-button:hover { background-color: #0056b3; }
-p { text-align: center; }
-a { color: #007bff; text-decoration: none; }
-#message { text-align: center; font-weight: bold; min-height: 20px; }
-.success { color: green; }
-.error { color: red; }
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f2f5; /* Light gray background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: #333;
+}
+
+.container {
+    background: white;
+    padding: 2.5rem 3rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 450px;
+    border-top: 5px solid #0B3D91; /* A nice blue accent */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+h2 {
+    text-align: center;
+    color: #0B3D91; /* Use the primary blue */
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+input, select { /* Style the select dropdown too */
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
+}
+
+button {
+    padding: 1rem;
+    background-color: #0B3D91;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 1rem;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+p {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+#message {
+    text-align: center;
+    font-weight: bold;
+    min-height: 24px;
+    padding: 0.5rem;
+    border-radius: 6px;
+}
+
+.success {
+    color: #155724;
+    background-color: #d4edda;
+}
+
+.error {
+    color: #721c24;
+    background-color: #f8d7da;
+}

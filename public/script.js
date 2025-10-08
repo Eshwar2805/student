@@ -12,11 +12,12 @@ if (signupForm) {
         const fullName = document.getElementById('full_name').value;
         const email = document.getElementById('email').value;
         const password = document.getElementById('password').value;
+        const role = document.getElementById('role').value;
 
         const response = await fetch(`${BACKEND_URL}/signup`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ full_name: fullName, email, password }),
+            body: JSON.stringify({ full_name: fullName, email, password,role }),
         });
 
         const data = await response.json();

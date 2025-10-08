@@ -2,15 +2,32 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Student Dashboard</title>
+    <title>Dashboard</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <style>
+        /* Styles specific to the dashboard layout */
+        .dashboard-section {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #eee;
+        }
+        .dashboard-section h3 {
+            margin-top: 0;
+            color: #333;
+        }
+        #logout-button {
+             background-color: #6c757d; /* A neutral gray */
+             margin-top: 2rem;
+        }
+        #logout-button:hover {
+            background-color: #5a6268;
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <h2>Welcome to Your Dashboard</h2>
-        <p>You are logged in as: <strong id="user-email">Loading...</strong></p>
-        <button id="logout-button">Logout</button>
+    <div class="container" id="dashboard-container">
+        <h2>Loading Dashboard...</h2>
     </div>
 
     <script src="dashboard.js"></script>
