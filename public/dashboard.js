@@ -3,8 +3,8 @@ const dashboardContainer = document.getElementById('dashboard-container');
 
 // ⚠️ STEP 1: Replace the placeholder below with a fresh, valid 'anon' key from your Supabase dashboard.
 // The key you were using was invalid, which is the main cause of the login loop.
-const SUPABASE_URL = '';
-const SUPABASE_KEY = ''; // <-- PASTE YOUR NEW KEY HERE
+const SUPABASE_URL = 'https://tqazcuavwltsrfofubur.supabase.co';
+const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRxYXpjdWF2d2x0c3Jmb2Z1YnVyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTk3Njg5MzMsImV4cCI6MjA3NTM0NDkzM30.R_PMg2n3YpRrmOtCECcpHT-jBA8iXHli-AThEz9fNDU'; // <-- PASTE YOUR NEW KEY HERE
 
 // This creates your Supabase client. The variable 'supabase' is from the library script in your HTML.
 const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
